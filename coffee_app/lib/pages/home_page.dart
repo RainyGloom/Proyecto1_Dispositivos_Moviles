@@ -1,5 +1,4 @@
 import 'package:coffee_app/pages/recipe_info_page.dart';
-import 'package:coffee_app/pages/recipes_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_app/pages/common.dart';
 import 'package:coffee_app/pages/profile_page.dart';

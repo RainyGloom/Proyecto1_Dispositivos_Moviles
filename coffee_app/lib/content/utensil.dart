@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Utensil {
-  Utensil(this.name, this.description);
+  Utensil({required this.name, required this.description});
   final String name;
   String? description;
 }

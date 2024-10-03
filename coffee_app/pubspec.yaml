@@ -31,6 +31,7 @@ flutter:
 
   assets:
     - assets/images/menu/
+    - assets/saves/
     - assets/images/icons/coffee_cup.svg
     - assets/images/icons/arrow.svg
     - assets/images/icons/home.svg
