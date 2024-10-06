@@ -26,7 +26,7 @@ class _CoffeeAppState extends State<_CoffeeApp>
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
     return MaterialApp(
-      home: HomePage(user: currentUser!),
+      home: HomePage(),
     );
   }
 }

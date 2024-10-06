@@ -4,8 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:coffee_app/content/user.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key, required User this.user});
-  final User user;
+  const ProfilePage({super.key});
   
   @override
   Widget build(BuildContext context) {
@@ -18,8 +17,8 @@ class ProfilePage extends StatelessWidget {
             children: [
               Text(' '),
               Icon(Icons.person),
-              Text('Username: ' + user.name, textScaler: TextScaler.linear(1.5)),
-              Text('Email: ' + user.email, textScaler: TextScaler.linear(1.5)),
+              Text('Username: ' + currentUser!.name, textScaler: TextScaler.linear(1.5)),
+              Text('Email: ' + currentUser!.email, textScaler: TextScaler.linear(1.5)),
             ]
           ),
         ),

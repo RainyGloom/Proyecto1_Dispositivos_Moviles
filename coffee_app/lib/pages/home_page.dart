@@ -7,13 +7,12 @@ import 'package:coffee_app/content/user.dart';
 import 'dart:math';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key, required this.user});
-  final User user;
+  const HomePage({super.key});
 
-  List<ElevatedButton> createOptions(BuildContext context)
+  List<ElevatedButton> _createOptions(BuildContext context)
   {
     return [
-      ElevatedButton(onPressed: () => goingTo(context, ProfilePage(user: user)), 
+      ElevatedButton(onPressed: () => goingTo(context, ProfilePage()), 
         child: const Text('Ver perfil')
       ),
     ];
@@ -88,7 +87,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         drawer: Drawer(
-          child: ListView(children: createOptions(context)),
+          child: ListView(children: _createOptions(context)),
         ),
       ),
     );
