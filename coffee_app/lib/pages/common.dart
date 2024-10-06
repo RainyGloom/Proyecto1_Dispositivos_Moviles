@@ -45,9 +45,9 @@ BottomNavigationBar createBottomNB(BuildContext context)
             BottomNavigationBarItem
       (
         icon: ElevatedButton(onPressed: () => goingTo(context, ProfilePage(user: currentUser!)), 
-          child: Text('D')
+          child: const Icon(Icons.person)
         ),
-        label: 'D'
+        label: 'Perfil'
       ),
     ],
   );

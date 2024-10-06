@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:coffee_app/content/recipe.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
+import 'dart:math';
 
 class RecipesInfoPage extends StatefulWidget {
   const RecipesInfoPage({super.key, required this.image});
@@ -25,7 +26,8 @@ class _RIPState extends State<RecipesInfoPage>
 
     setState(() {
       List<Recipe> recipes = data.map((recipe) => Recipe.fromJson(recipe)).toList();
-      recipe = recipes[0];
+      int i = Random().nextInt(recipes.length);
+      recipe = recipes[i];
     });
   }
   @override
@@ -37,18 +39,27 @@ class _RIPState extends State<RecipesInfoPage>
   @override
   Widget build(BuildContext context) {
     
-    List<Widget> recipeWidget = recipe != null ? recipe!.buildDisplay() : [];
-    recipeWidget.insert(0,
+    List<Widget> recipeWidget = [];
+    recipeWidget.add(
       Center(
         child: Image(image: widget.image),
+      ),
+    );
+    recipeWidget.add(
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: recipe != null ? recipe!.buildDisplay(context) : [],
       ),
     );
     return MaterialApp(
       theme: mainTheme(),
       home: Scaffold(
         backgroundColor: getBackgroundColor(),
-        body: Column(
-          children: recipeWidget,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: recipeWidget,
+          ),
         ),
         bottomNavigationBar: createBottomNB(context),
       ),
